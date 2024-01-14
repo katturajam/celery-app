@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "CelerayWorker",
+            "cwd":"${workspaceRoot}",
+            "type": "python",
+            "request": "launch",
+            "module": "celery",
+            "args": [
+                "-A",
+                "app.main_worker",
+                "worker",
+                "-E"
+            ],
+            "envFile": "${workspaceFolder}/.vscode/.env",
+            "justMyCode": false,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "PublishMessage",
+            "cwd":"${workspaceRoot}",
+            "type": "python",
+            "request": "launch",
+            "program": "app/publish.py",
+            "jinja": true,
+            "justMyCode": true,
+            "console": "integratedTerminal"
+        },
+    ]
+}
